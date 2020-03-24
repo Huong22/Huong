@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="D:/CV/css/login.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/da0ba55b53.js" crossorigin="anonymous"></script>
+        <script src="D:/CV/js/jquery-3.3.1.min.js"></script>
+    </head>
+    
+    <body>
+        <div class="to">
+            <div class="form">
+                <h2>Log-in</h2>
+                <i class="fab fa-app-store-ios"></i>
+                <label style="margin-left: -150px;">Usename</label>
+                <input type="text" name="usename">
+                <label style="margin-left: -180px;">Email</label>
+                <input type="text" name="email">
+                <input id="submit" type="submit" name="submit" value="log in">
+            </div>
+        </div>
+    </body>
+</html>
