@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="D:/CV/js/jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body class="container">
+    <h1>Custom CV</h1>
+    <form action="">
+        <div class="form-group">
+            <label>Họ tên</label>
+            <input type="text" class="form-control" id="name" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>Link FB</label>
+            <input type="text" class="form-control" id="linkFB" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>Giới thiệu bản thân</label>
+            <textarea class="form-control" id="introduce" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Học vấn</label>
+            <textarea class="form-control" id="study" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Khả năng lập trình</label>
+            <textarea class="form-control" id="abilities" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Sở thích</label>
+            <textarea class="form-control" id="hobbies" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Mong muốn</label>
+            <textarea class="form-control" id="dreams" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary"> Save</button>
+    </form>
+</body>
+<script>
+    $(document).ready(function () {
+        $('input[type="text"]').each(function () {
+            let id = $(this).attr("id");
+            let value = localStorage.getItem(id)
+            $(this).val(value)
+        })
+        $('textarea').each(function () {
+            let id = $(this).attr("id");
+            let value = localStorage.getItem(id)
+            $(this).val(value)
+        })
+    })
+
+    $("button").click(function(){
+        $('input[type="text"]').each(function () {
+            let id = $(this).attr("id");
+            let value = $(this).val()
+            localStorage.setItem(id,value)
+        })
+        $('textarea').each(function () {
+            let id = $(this).attr("id");
+            let value = $(this).val()
+            localStorage.setItem(id,value)
+        })
+    })
+</script>
+
+</html>

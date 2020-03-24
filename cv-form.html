@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="D:/CV/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/da0ba55b53.js" crossorigin="anonymous"></script>
+    <script src="D:/CV/js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <section id="left">
+            <p id="name">Đặng Thị Mai Hương</p>
+            <div class="center-left-section">
+                <img class="circle-image avatar" src="D:/CV/img/huong.jpg" alt="Anh Dai Dien">
+                <div class="content">
+                    <p id="introduce">Chào mọi người, mình là Hương! Mình đang bắt đầu học lập trình Web. </p>
+                   
+                </div>
+                <div class="mail-button">
+                    <h4>Hãy Follow mình </h4>
+                    <a id="linkFB" href="https://www.facebook.com/huong.be.coi.99" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>    
+                </div>
+
+            </div>
+        </section>
+        <section id="right">
+            <div>
+                <h3>Học vấn</h3>
+
+                <p id="study">😍Chống nghèo Chống khổ 😍-😂Chưa cần Chống ế😂</p>
+
+
+            </div>
+            <div>
+                <h3>Khả năng lập trình</h3>
+
+                <p id="abilities">😍Chống nghèo Chống khổ 😍-😂Chưa cần Chống ế😂.</p>
+
+            </div>
+            <div>
+                <h3>
+                    Sở Thích
+                </h3>
+
+                <p id="hobbies">😍Chống nghèo Chống khổ 😍-😂Chưa cần Chống ế😂</p>
+
+
+            </div>
+            <div>
+                <h3>Mong muốn</h3>
+
+
+                <p id="dreams">😍Chống nghèo Chống khổ 😍-😂Chưa cần Chống ế😂</p>
+
+
+            </div>
+        </section>
+    </main>
+    <div style="cursor: pointer;" onclick="location.href='custom-cv.html'" class="right-buttons">
+        Log-in
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        if (!localStorage.name){
+            let name = $("#name").text()
+            let introduce = $("#introduce").text()
+            let linkFB = $("#linkFB").attr("href")
+            let study = $("#study").text()
+            let abilities = $("#abilities").text()
+            let hobbies = $("#hobbies").text()
+            let dreams = $("#dreams").text()
+            localStorage.setItem("name",name)
+            localStorage.setItem("introduce",introduce)
+            localStorage.setItem("linkFB",linkFB)
+            localStorage.setItem("study",study)
+            localStorage.setItem("abilities",abilities)
+            localStorage.setItem("hobbies",hobbies)
+            localStorage.setItem("dreams",dreams)
+            console.log(localStorage)
+        } else {
+            $("p").each(function(){
+                let id = $(this).attr("id")
+                let value = localStorage.getItem(id)
+                $("#"+id).text(value)
+            })
+            
+            $("#linkFB").attr("href", localStorage.getItem("linkFB"))
+        }
+    })
+</script>
+
+</html>
